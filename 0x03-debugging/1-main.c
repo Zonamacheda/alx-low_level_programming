@@ -9,7 +9,7 @@ int main(void)
 {
 	int i;
 
-	printf("Infinite loop incoming :(\n");
+	printf("Infinite loop incoming :(\n"); /* don't delete it! */
 
 	i = 0;
 
