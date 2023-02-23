@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <main.h>
+
 /**
  * print_remaining_days - picks a date
  * and prints how many is left
