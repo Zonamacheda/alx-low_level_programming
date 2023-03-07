@@ -8,17 +8,6 @@
 
 int _evaluate(int i, int n)
 {
-/*Evaluate functions*/
-if (n == 0 || n == 1)
-return (n);
-
-else if (i * i < n)
-return (_evaluate(i + 1, n));
-
-else if (i * i == n) /*condition base*/
-return (i);
-
-return (-1);
-
-return (-1);
+	if ((root * root) == num)
+		return (root);
 }
