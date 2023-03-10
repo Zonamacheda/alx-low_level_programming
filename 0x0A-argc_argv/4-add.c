@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 		if (check_num(argv[count]))
 
 		{
-			str_to_int = atpi(argv[count]);/* ATOI CONVERTS TO STRING*/
+			str_to_int = atoi(argv[count]);/* ATOI CONVERTS TO STRING*/
 
 			sum += str_to_int;
 		}
