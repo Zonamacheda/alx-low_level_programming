@@ -5,42 +5,32 @@
 
 /**
  * main - print the name of the program
- * @argc: count arguments
- * @argv: Arguments
- *
- * Return:Always 0 (success)
+ * @argc: argc parameter
+ * @argv: an array of a command listed
+ * Return: 0 for success
  */
-
 int main(int argc, char *argv[])
-
 {
-	/*Declaring variables*/
-	int count;
-	int str_to_int;
-	int sum = 0;
+	int result = 0, num, i, j, k;
 
-	count = 1;
-	while (count < argc)/*goes thru the whole array*/
+	for (i = 1; i < argc; i++)
 	{
-		if (check_num(argv[count]))
-
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			str_to_int = atoi(argv[count]);/* ATOI CONVERTS TO STRING*/
+			if (argv[i][j] > '9' || argv[i][j] < '0')
+			{
 
-			sum += str_to_int;
-		}
-		/*condition if one of the number contain symbol that are not digit*/
-
-		else
-		{
-			printf("Error\n");
+			printf("%s\n", "Error");
 			return (1);
+			}
 		}
-
-		count++;
 	}
 
-	printf("%d\n", sum);/* print sum*/
-
+	for (k = 1; k < argc; k++)
+	{
+		num = atoi(argv[k]);
+		result += num;
+	}
+	printf("%d\n", result);
 	return (0);
 }
