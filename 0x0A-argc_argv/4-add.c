@@ -1,35 +1,45 @@
 #include <stdio.h>
-#include "main.h"
-#include <stlib.h>
+#include <stdlib.h>
 
 /**
- * main - print the name of the program
- * @argc: argc parameter
- * @argv: an array of a command listed
- * Return: 0 for success
+ * isNumeric - checks if a string is a number or not
+ * @str: string to be checked
+ *
+ * Return: true if number. otherwise false
  */
-int main(int argc, char *argv[])
+int isNumeric(const char *str)
 {
-	int result = 0, num, i, j, k;
-
-	for (i = 1; i < argc; i++)
+	while (*str != '\0')
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		if (*str < '0' || *str > '9')
+			return (0);
+		str++;
+	}
+	return (1);
+}
+/**
+ * main - adds positive numbers
+ * @argc: array size
+ * @argv: array containing elements
+ *
+ * Return: 0 on success
+ */
+int main(int argc, char **argv)
+{
+	int count = 1, sum = 0;
+
+	while (count < argc)
+	{
+		if (isNumeric(argv[count]) == 0)
 		{
-			if (argv[i][j] > '9' || argv[i][j] < '0')
-			{
-
-			printf("%s\n", "Error");
+			puts("Error");
 			return (1);
-			}
 		}
+		sum = sum + atoi(argv[count]);
+		count++;
 	}
 
-	for (k = 1; k < argc; k++)
-	{
-		num = atoi(argv[k]);
-		result += num;
-	}
-	printf("%d\n", result);
+	printf("%d\n", sum);
+
 	return (0);
 }
