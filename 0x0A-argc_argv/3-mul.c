@@ -67,18 +67,23 @@ int _atoi(char *s)
  *
  * Return: 0 on sucess
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int arr_len = argc - 1;
+	int result, num1, num2;
 
-	if (arr_len != 2)
+	if (argc < 3 || argc > 3)
 	{
-		puts("Error");
+		printf("Error\n");
 
 		return (1);
+
 	}
 
-	printf("%d\n", atoi(argv[i]) * atoi(argv[2]));
+	num1 = _atoi(argv[1]);
+	num2 = _atoi(argv[2]);
+	result = num1 * num2;
+
+	printf("%d\n", result);
 
 	return (0);
 }
