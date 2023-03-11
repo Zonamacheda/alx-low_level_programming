@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "main.h"
-#include <stdlib.h>
 
 /**
  * _atoi - converts a string to an integer
@@ -62,10 +61,10 @@ int _atoi(char *s)
 
 /**
  * main - multiplies 2 numbers
- * @argc: array size
- * @argv: array containing elements
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
- * Return: 0 on sucess
+ * Return: 0 on sucess, 1(Error)
  */
 int main(int argc, char *argv[])
 {
