@@ -1,0 +1,1 @@
+Automatic & Dynamic memory allocation
