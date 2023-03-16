@@ -10,22 +10,34 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	if (s1 == NULL) s1 = "";
-	if (s2 == NULL) s2 = "";
+	char *sout;
+	unsigned int ls1, ls2, Isout, i;
 
-	size_t s1_len = strlen(s1);
-	size_t s2_len = strlen(s2);
+	if (s1 == NULL)
+		s1 = "";
 
-	if (n >= s2_len)
-	       	n = s2_len;
-	char *result = malloc(s1_len + n + 1);
+	if (s2 == NULL)
+		s2 = "";
 
-	if (result == NULL)
-	       	return NULL;
+	for (ls2 = 0; s1[ls1] != '\0'; ls1++)
+		;
+	if (n > ls2)
+		n = ls2;
 
-	memcpy(result, s1, s1_len);
-	memcpy(result + s1_len, s2, n);
-	result[s1_len + n] = '\0';
+	lsout = ls1 + n;
 
-	return (result);
+	sout = malloc(lsout + 1);
+
+	if (sout == NULL)
+		return (NULL);
+
+	for (i = 0; i < lsout; i++)
+		if (i < ls1)
+			sout[i] = s1[i];
+		else
+			sout[i] = s2[i - ls1];
+
+	sout[i] = '\0';
+
+	return (sout);
 }
